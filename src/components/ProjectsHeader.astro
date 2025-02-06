@@ -1,0 +1,121 @@
+---
+import { Image } from "astro:assets";
+import nextjsIcon from "../assets/icons/nextjs.svg";
+import js from "../assets/icons/js.svg";
+import react from "../assets/icons/react.svg";
+import tailwind from "../assets/icons/tailwind.svg";
+import figma from "../assets/icons/figma.svg";
+import typescript from "../assets/icons/typescript.svg";
+
+import criptoSite from "../assets/criptoSite.png";
+import hel from "../assets/hel.png";
+import flanfeu from "../assets/flanfeu.png";
+import luigi from "../assets/luigi.png";
+import wine from "../assets/wine.png";
+import cripto from "../assets/cripto.png";
+import criptoFigma from "../assets/criptoFigma.png";
+
+const projects = [
+  {
+    id: 1,
+    image: criptoSite,
+    url: "https://crypto-site--chi.vercel.app/",
+    technologies: [
+      { component: nextjsIcon },
+      { component: typescript },
+      { component: react },
+      { component: tailwind },
+    ],
+  },
+  {
+    id: 2,
+    image: hel,
+    url: "https://helsinky-app.vercel.app/",
+    technologies: [
+      { component: react },
+      { component: tailwind },
+      { component: js },
+    ],
+  },
+  {
+    id: 3,
+    image: flanfeu,
+    url: "https://franciscoberardo.github.io/restaurant-site/",
+    technologies: [
+      { component: react },
+      { component: tailwind },
+      { component: js },
+    ],
+  },
+  {
+    id: 4,
+    image: luigi,
+    url: "https://www.figma.com/proto/g2Wi3d5orjaGlDB7nshaFY/Chef-recipes-site",
+    technologies: [{ component: figma }],
+  },
+  {
+    id: 5,
+    image: wine,
+    url: "https://www.figma.com/proto/qwZqS6lpPnzq8fnfqJB1HP/restaurant?node-id=1-2&p=f&t=iX0lkHqIrJTzp9S9-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1",
+    technologies: [{ component: figma }],
+  },
+  {
+    id: 6,
+    image: cripto,
+    url: "https://www.figma.com/proto/RxsHcjRbhgmIn5zeLW3DA0/cripto-site?node-id=1-2&t=px35teeVXTMwMcwj-1",
+    technologies: [{ component: figma }],
+  },
+  {
+    id: 7,
+    image: criptoFigma,
+    url: "https://www.figma.com/proto/u6ZFh6mhRCxIIxUc25PL2c/Responsive-criptocurrency-site",
+    technologies: [{ component: figma }],
+  },
+];
+---
+
+<header
+  class="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 py-12 px-8"
+>
+  <div class="text-center mb-12">
+    <h1 class="text-5xl text-white mb-4 font-inter">My Programming Projects</h1>
+    <p class="text-gray-300 text-lg">
+      A selection of projects crafted based on unique client requirements,
+      delivering tailored and exceptional results.
+    </p>
+  </div>
+  <div
+    class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+  >
+    {
+      projects.map(({ id, image, url, technologies }) => (
+        <div class="relative bg-gray-800 shadow-lg rounded-xl overflow-hidden flex flex-col items-center justify-center transform transition duration-300 hover:scale-105 hover:shadow-2xl p-4">
+          <Image
+            src={image}
+            alt={`Project ${id}`}
+            class="w-full h-40 sm:h-48 object-cover mb-4 rounded-md"
+            width={500}
+            height={300}
+          />
+          <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
+            <a
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-white bg-indigo-600 py-2 px-6 rounded-lg"
+            >
+              View Project
+            </a>
+          </div>
+          <div class="flex gap-4 justify-center mb-2">
+            {technologies.map(({ component }, index) => (
+              <div class='w-6 h-6'>
+                <Image src={component} alt="Tech Icon" class="w-full h-full" />
+              </div>
+            ))}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</header>

@@ -1,0 +1,31 @@
+---
+import { Image } from "astro:assets";
+import linkedin from "../assets/icons/linkedin.svg";
+import upwork from "../assets/icons/upwork.svg";
+---
+
+<nav class="bg-gray-900 text-white p-4 sticky top-0 z-10 shadow-md">
+  <div class="container mx-auto flex justify-between items-center">
+    <h1 class="text-2xl font-mono font-semibold">Francisco Berardo</h1>
+    <div class="flex space-x-6">
+      <a
+        href="https://www.linkedin.com/in/francisco-berardo"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hover:text-gray-400 transition-colors duration-200"
+        aria-label="LinkedIn"
+      >
+        <Image src={linkedin} alt="LinkedIn" class="w-6 h-6" />
+      </a>
+      <a
+        href="https://www.upwork.com/freelancers/franciscob45?mp_source=share"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hover:text-gray-400 transition-colors duration-200"
+        aria-label="Upwork"
+      >
+        <Image src={upwork} alt="Upwork" class="w-6 h-6" />
+      </a>
+    </div>
+  </div>
+</nav>
