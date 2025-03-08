@@ -9,7 +9,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.2.3"
+    "astro": "^5.2.3",
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
     "@astrojs/tailwind": "^6.0.0",
